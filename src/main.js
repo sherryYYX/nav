@@ -31,8 +31,7 @@ const render = () => {
             window.open(node.url)
         })
         $li.on('click','.close',(e)=>{
-            console.log("关闭")
-            e.stopPropagation()//阻止冒泡
+            e.stopPropagation() //阻止冒泡
             hashMap.splice(index,1);
             render()
         })
@@ -55,11 +54,16 @@ window.onbeforeunload = () => {
     const string = JSON.stringify(hashMap)
     window.localStorage.setItem('x',string)
 }
-$(document).on('keypress', (e) => {
-    const key = e.key;
+$(document).on('keypress',  (e) => {
+    if(e.target.nodeName === 'INPUT') return
+
+    const keyCode = e.code;
+    console.log(keyCode)
     for(let i=0;i<hashMap.length;i++){
-        if(hashMap[i].logo.toLowerCase() === key){
+        if(hashMap[i].logo == keyCode[3] ){
             window.open(hashMap[i].url)
         }
     }
 })
+
+

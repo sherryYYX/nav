@@ -143,7 +143,6 @@ var render = function render() {
       window.open(node.url);
     });
     $li.on('click', '.close', function (e) {
-      console.log("关闭");
       e.stopPropagation(); //阻止冒泡
 
       hashMap.splice(index, 1);
@@ -174,13 +173,15 @@ window.onbeforeunload = function () {
 };
 
 $(document).on('keypress', function (e) {
-  var key = e.key;
+  if (e.target.nodeName === 'INPUT') return;
+  var keyCode = e.code;
+  console.log(keyCode);
 
   for (var i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
+    if (hashMap[i].logo == keyCode[3]) {
       window.open(hashMap[i].url);
     }
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.d0e8292b.js.map
+//# sourceMappingURL=main.40758f3e.js.map
