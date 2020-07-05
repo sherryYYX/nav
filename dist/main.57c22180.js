@@ -128,6 +128,18 @@ var hashMap = xObject || [{
 }, {
   logo: 'B',
   url: "https://www.bilibili.com"
+}, {
+  logo: 'I',
+  url: "https://www.iconfont.cn"
+}, {
+  logo: 'C',
+  url: "https://cssgradient.io"
+}, {
+  logo: 'J',
+  url: "https://www.jiumodiary.com"
+}, {
+  logo: 'B',
+  url: "https://www.bootcdn.cn"
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
@@ -184,4 +196,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.40758f3e.js.map
+//# sourceMappingURL=main.57c22180.js.map
